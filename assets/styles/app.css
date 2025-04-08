@@ -1,3 +1,41 @@
-body {
-    background-color: skyblue;
+body, .example-wrapper{
+    background-color: bisque;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+
+h1 {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h2{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.card-img, .card-img-bottom, .card-img-top{
+
+    height : 250px;
+    object-fit: cover;
+}
+
+.card-title, .card-title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+/* #navbarText{
+    background-color:pink;
+} */
+
+.container-fluid{
+    background-color: #ffc107;
+}
+

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+
+{{form_start(form)}}
+
+
+{{form_row(form.title)}}
+{{form_row(form.content)}}
+{{form_row(form.image)}}
+{{form_row(form.duration)}}
+{{form_row(form.category)}}
+
+
+<button type="submit">Soumettre</button>
+
+{{form_end(form)}}
+{% endblock %}
