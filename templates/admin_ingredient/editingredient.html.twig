@@ -1,0 +1,21 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}Hello PantsController!
+{% endblock %}
+
+{% block body %}
+	{{form_start(form)}}
+
+
+	{{form_row(form.name)}}
+
+    {# {{form_row(form.image)}}
+
+    {{form_row(form.price)}}
+    {{form_row(form.categories)}} #}
+    
+<button type="submit">Soumettre</button>
+	{{form_end(form)}}
+	
+
+{% endblock %}

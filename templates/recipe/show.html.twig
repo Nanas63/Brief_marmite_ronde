@@ -1,0 +1,60 @@
+{% block body %}
+
+	<h1 class="card-title">{{recipe.title}}</h1>
+	<div class="card">
+
+
+		<img src="{{recipe.image}}" class="card-img-top" alt="photo de la recette">
+		<div class="card-body">
+
+			<p class="card-price">{{recipe.content}}</p>
+
+
+			{# {% for recipe.category.level in recipe.categories.level %}
+																<p class="card-category">{{category.level}}</p>
+												                <a href="{{path('recipe/show', {'id' : category.id}) }}" class="btn btn-primary">Click</a>
+															{% endfor %}
+															 #}
+			<p class="card-category">Difficulté :
+				{{recipe.category.level}}</p>
+			<p class="card-duration">Durée :
+				{{recipe.duration}}mn</p>
+			<p class="card-user">Auteur :
+				{{recipe.user.username}}</p>
+			<p class="card-creation">Créé le :
+				{{recipe.createdAt|date('d/m/Y')}}</p>
+
+			{# <section class="comment_container">
+
+				{% if app.user %}
+					<form action="{{ path('one_recipe', {'id': recipe.id}) }}" method="post" class="comment-form">
+						<label for="content">Ajouter un commentaire :</label>
+						<textarea name="content" id="content" rows="4" required></textarea>
+						<button type="submit">Envoyer</button>
+					</form>
+					<section class="comment_container">
+				{% endif %} #}
+
+				
+						{# {% for comment in recipe.comments %}
+							<section class="comment">
+
+								<h1>{{ comment.user.username }}</h1>
+								<p>{{ comment.content }}</p>
+															</section>
+						{% endfor %} #}
+
+
+	<div>
+        {% for comment in recipe.comments %}
+       <p>nom : {{comment.user.pseudo}}</p>
+      <p>commentaire :  {{comment.content}}</p>
+         {% endfor %}
+          <a type="submit" href="{{path('add')}}">créer un commentaire</a>
+     </div>
+
+
+	</div>
+
+
+{% endblock %}

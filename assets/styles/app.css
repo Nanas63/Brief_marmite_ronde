@@ -22,13 +22,23 @@ h2{
 
 .card-title, .card-title {
     font-family: Georgia, 'Times New Roman', Times, serif;
+  
+}
+
+
+.card{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff3cd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .container{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-content: center;
+    
 }
 
 /* #navbarText{
@@ -37,5 +47,12 @@ h2{
 
 .container-fluid{
     background-color: #ffc107;
+}
+
+footer{
+    background-color: #ffc107;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
 }
 

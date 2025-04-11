@@ -16,6 +16,17 @@
 				<li class="nav-item">
 					<a class="nav-link" href="{{path('index_category')}}">Categories</a>
 				</li>
+
+
+
+				{# Bouton Admin visible que par l'Admin #}
+				{% if is_granted("ROLE_ADMIN") %}
+				<li class="nav-item">
+					<a class="nav-link" href="{{path('app_admin')}}">Admin</a>
+				</li>
+				{% endif %}
+				
+				
 			</ul>
 			<span class="navbar-text"></span>
 		</div>
@@ -23,12 +34,16 @@
 
 		{% if app.user %}
 			<p>Bienvenue
+			
 				{{app.user.email}}</p>
-			<a href="{{path ('app_logout')}}">Se déconnecter</a>
+
+				
+				<a class = "btn btn-dark" href="{{path('add_recipe')}}">Ajouter une recette</a>
+			<a href="{{path('app_logout')}}">Se déconnecter</a>
 
 		{% else %}
-			<a href="{{path ('app_login')}}">Se connecter /</a>
-			<a href="{{path ('app_register')}}">S'enregistrer</a>
+			<a href="{{path('app_login')}}">Se connecter /</a>
+			<a href="{{path('app_register')}}">S'enregistrer</a>
 		{% endif %}
 
 	</div>

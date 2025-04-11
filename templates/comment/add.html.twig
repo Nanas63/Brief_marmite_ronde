@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<h2>Ajouter un commentaire</h2>
+
+    {% if app.user %}
+        <p>Bonjour {{app.user.username}}</p>
+    {% else %}
+        <p>Bonjour Invité</p>
+    {% endif %}
+
+    {# <p>Bonjour {{app.user.username}}</p> #}
+
+    {# <p>Bonjour {{app.user.name}}</p> #}
+	{{form_start(form)}}
+
+
+	{{form_row(form.content)}}
+	
+
+	<button type="submit">Soumettre</button>
+
+	{{form_end(form)}}
+
+{% endblock %}

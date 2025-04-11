@@ -1,0 +1,21 @@
+
+{% extends 'base-admin.html.twig' %}
+
+
+{% block body %}
+
+<h1 class="card-title">{{ingredient.name}}</h1>
+	
+   
+				<p class="card-category">{{ingredient.name}}</p>
+       {#  <div class="card-body">
+            <p class="card-price">{{ingredient.price}}</p>
+            <p class="card-difficult">{{ingredient.category.level}}</p>
+        </div> #}
+    
+                <a href="{{path('list_ingredient')}}" class="btn btn-primary">Voir tous les ingrédients</a>
+		
+ 
+ {% endblock %}
+
+ 

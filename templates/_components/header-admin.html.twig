@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="#">Marmite Ronde</a>
+
+		{# <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button> #}
+		<div class="collapse navbar-collapse" id="navbarText">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				{# <li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="{{path ('index_home')}}">Accueil</a>
+				</li> #}
+                </ul>
+			<span class="navbar-text"></span>
+		</div>
+
+        <div class="container-fluid">
+			{% if app.user %}
+			<p>Bienvenue
+				{{app.user.email}}</p>
+			<a href="{{path ('app_logout')}}">Se déconnecter</a>
+
+		{% else %}
+			<a href="{{path ('app_login')}}">Se connecter /</a>
+			
+		{% endif %}
+        </div>
+    </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+<a class="btn btn-dark btn-lg" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" class=>Menu
+
+</a>
+{# <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+  Produits
+</button> #}
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+	<div class="offcanvas-header">
+		<h5 class="offcanvas-title" id="offcanvasExampleLabel">Gérer</h5>
+		<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	</div>
+	<div class="offcanvas-body">
+		<div>
+			Ajouter des Recettes, des Ingrédients...
+		</div>
+		<div class="dropdown mt-3">
+			<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+				<button type="button" class="btn btn-outline-warning">Sélectionner</button>
+			</button>
+			<ul class="dropdown-menu">
+
+				<li>
+					<a class="dropdown-item" href="{{path('ad_recipe')}}">Recettes</a>
+				</li>
+				<li>
+					<a class="dropdown-item" href="{{path('add_ingredient')}}">Ingrédients</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+    
+
+</div>

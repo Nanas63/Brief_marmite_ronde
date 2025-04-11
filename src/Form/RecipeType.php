@@ -8,6 +8,7 @@ use App\Entity\Category;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
@@ -19,29 +20,29 @@ class RecipeType extends AbstractType
             ->add('title', TextType::class, [
                 'label' => 'Nom de la recette',
                 'required' => true,
-                'attr' => ['placeholder' => 'Entrez le nom de la recette'],
+                'attr' => ['placeholder' => 'Nom de la recette'],
             ])
-            ->add('content', TextType::class, [
+            ->add('content', TextareaType::class, [
                 'label' => 'Description',
                 'required' => true,
-                'attr' => ['placeholder' => 'Entrez la description de la recette'],
+                'attr' => ['placeholder' => 'Description de la recette'],
             ])
             ->add('image', TextType::class, [
                 'label' => 'Lien de l\'image',
                 'required' => true,
-                'attr' => ['placeholder' => 'Entrez l\'URL de l\'image'],
+                'attr' => ['placeholder' => 'URL de l\'image'],
             ])
             ->add('duration', TextType::class, [
                 'label' => 'Duree',
                 'required' => true,
-                'attr' => ['placeholder' => 'Entrez la durée de préparation'],
+                'attr' => ['placeholder' => 'Durée de la recette en minutes'],
             ])
-            ->add('Category', EntityType::class, [
+            ->add('category', EntityType::class, [
                 'class' => Category::class,
-                'choice_label' => 'name',
+                'choice_label' => 'Level',
                 'label' => 'Niveau de difficulté',
                 'required' => true,
-                'attr' => ['placeholder' => 'Entrez le niveau de difficulté'],
+                'attr' => ['placeholder' => 'Niveau de difficulté'],
             ])
         ;
     }

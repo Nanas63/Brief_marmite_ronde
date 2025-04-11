@@ -24,6 +24,8 @@ class Recipe
     #[ORM\Column(length: 255)]
     private ?string $image = null;
 
+    
+
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
 
@@ -32,9 +34,6 @@ class Recipe
 
     #[ORM\Column]
     private ?int $duration = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $author = null;
 
     #[ORM\ManyToOne(inversedBy: 'recipes')]
     private ?User $user = null;
@@ -158,17 +157,6 @@ class Recipe
         return $this;
     }
 
-    public function getAuthor(): ?string
-    {
-        return $this->author;
-    }
-
-    public function setAuthor(string $author): static
-    {
-        $this->author = $author;
-
-        return $this;
-    }
 
     public function getUser(): ?User
     {

@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminIngredientController!{% endblock %}
+
+
+{% block body %}
+	<h1>Ingrédients</h1>
+
+	<a href="{{path('add_ingredient') }}" class="btn btn-warning">Ajouter</a>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col"></th>
+				<th scope="col">Nom</th>
+				{# <th scope="col">Image</th>
+				<th scope="col">Prix</th> #}
+				<th scope="col">Voir</th>
+
+				<th scope="col">Supprimer</th>
+				<th scope="col">Modifier</th>
+
+			</tr>
+		</thead>
+		<tbody>
+
+
+			{% for ingredient in ingredients %}
+				<tr>
+					<th scope="row">{{ingredient.id}}</th>
+					<td>{{ingredient.name}}</td>
+
+					{# <td>{{prod.image}}</td>
+					<td>{{prod.price}}</td>
+					<td>{{prod.categories}}</td> #}
+										 
+					<td>
+						<a href="{{path('show_ingredient', {id : ingredient.id}) }}" class="btn btn-warning">Voir</a>
+					</td>
+
+					<td>
+						
+
+						<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal{{ingredient.id}}" >
+							Sup
+						</button>
+
+					</td>
+
+
+					<td>
+						<a href="{{path('edit_ingredient', {id : ingredient.id}) }}" class="btn btn-warning">Modif</a>
+					</td>
+
+					<td></td>
+				</tr>
+				<div class="modal fade" id="exampleModal{{ingredient.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLabel">Confirmez la suppression</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+								
+
+								<a href="{{path('remove_ingredient', {id : ingredient.id}) }}" class="btn btn-primary">Supprimer</a>
+							</div>
+						</div>
+					</div>
+				</div> 
+
+				
+			{% endfor %}
+		</tbody> 
+	</table>
+{% endblock %}
+
